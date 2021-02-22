@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import data from './prostars.json'
+import './App.css'
 export default class Stars extends Component {
     constructor() {
         super()
@@ -32,33 +33,33 @@ export default class Stars extends Component {
     }
     sortbyname() {
         var datatobedsorted = this.state.dataset;
-        datatobedsorted.sort( (Name1,Name2) => {
-            if(Name1.name.toLocaleLowerCase()<Name2.name.toLocaleLowerCase()){
+        datatobedsorted.sort((Name1, Name2) => {
+            if (Name1.name.toLocaleLowerCase() < Name2.name.toLocaleLowerCase()) {
                 return -1
             }
-            else if(Name1.name.toLocaleLowerCase()>Name2.name.toLocaleLowerCase()){
+            else if (Name1.name.toLocaleLowerCase() > Name2.name.toLocaleLowerCase()) {
                 return 1
             }
-            else{
+            else {
                 return 0
             }
         });
-        this.setState({dataset:datatobedsorted});
+        this.setState({ dataset: datatobedsorted });
     }
     sortbypopularity() {
         var datatobedsorted = this.state.dataset;
-        datatobedsorted.sort( (Name1,Name2) => {
-            if(Name1.popularity<Name2.popularity){
+        datatobedsorted.sort((Name1, Name2) => {
+            if (Name1.popularity < Name2.popularity) {
                 return -1
             }
-            else if(Name1.popularity<Name2.popularity){
+            else if (Name1.popularity < Name2.popularity) {
                 return 1
             }
-            else{
+            else {
                 return 0
             }
         });
-        this.setState({dataset:datatobedsorted});
+        this.setState({ dataset: datatobedsorted });
     }
     render() {
         return (
